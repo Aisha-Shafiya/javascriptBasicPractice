@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async project</title>
+</head>
+<body>
+   <h1>Aisha Shafiya</h1> 
+   <button id="stop">Stop</button>
+</body>
+<script>
+    const sayAisha = function(){
+        console.log("Aisha Amreen");
+    }
+    // To change the text
+    // document.querySelector('h1').innerHTML = "Best Js"
+    const changeText = function(){
+         document.querySelector('h1').innerHTML = "Best Js"
+    }
+    setTimeout(sayAisha,2000);
+   const changeMe = setTimeout(changeText,3000)
+    // To stop the event
+     document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe);
+        console.log('Event Stopped');
+     })
+</script>
+</html>
+
+//Set Interval which print continously without any stop
+  const sayDate = function(){
+    console.log("Aisha",Date.now());
+  }
+//  const intervalId = setInterval(sayDate,1000);
+// clearInterval(intervalId);
+// To start the event
+document.querySelector("#start").addEventListener('click',function(){
+    const intervalId = setInterval(sayDate,1000)
+})
+document
